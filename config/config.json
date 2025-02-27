@@ -1,0 +1,7 @@
+{
+  "api_url": "https://groupietrackers.herokuapp.com/api",
+  "api_url_artists": "https://groupietrackers.herokuapp.com/api/artists",
+  "api_url_locations": "https://groupietrackers.herokuapp.com/api/locations",
+  "api_url_dates": "https://groupietrackers.herokuapp.com/api/dates",
+  "api_url_relation": "https://groupietrackers.herokuapp.com/api/relation"
+}

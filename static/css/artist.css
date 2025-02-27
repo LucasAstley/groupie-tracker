@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: 'Kanit', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.semiconeuropa.org/sites/semiconeuropa.org/files/styles/2100x600/public/2024-08/codioful-formerly-gradienta-bKESVqfxass-unsplash.jpg.webp?itok=AKlW0d2j');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+header button {
+    background: none;
+    color: #ffffff;
+    margin: 5%;
+    font-size: 25px;
+    transition: transform 0.3s ease;
+    border: none;
+}
+
+header button:hover {
+    transform: translateX(-5px);
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 20vh;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0);
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: transparent;
+    font-size: clamp(1rem, 5vw, 9rem);
+    font-style: normal;
+    text-align: center;
+    width: 90%;
+    overflow: visible;
+    z-index: 2;
+    -webkit-text-stroke: clamp(1px, 0.3vw, 3px) white;
+}
+
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 4rem;
+        -webkit-text-stroke: 1.5px white;
+    }
+}
+
+.go-home {
+    position: absolute;
+    left: 0;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2rem;
+    z-index: 100;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 2rem;
+    height: 80vh;
+}
+
+.left-container {
+    width: 49.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.player {
+    width: 63%;
+    height: 100%;
+    border-radius: 1.5rem;
+    border: 1px solid white;
+    overflow: hidden;
+}
+
+.image-button-container {
+    display: flex;
+    width: 100%;
+    height: 48%;
+    align-items: center;
+}
+
+.image-button-container img {
+    width: 35%;
+    height: 100%;
+    border-radius: 1.5rem;
+    margin-right: 1rem;
+}
+
+/* Base styles */
+.artist-life {
+    width: 100%;
+    height: 48%;
+    border: 1px solid white;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.creation-date {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 2em;
+}
+
+.first-album {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2em;
+}
+
+.group-member-title {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    font-size: 2em;
+    margin-top: 5rem;
+}
+
+.group-member {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    font-size: 1.5em;
+}
+
+.map-artist {
+    width: 49.5%;
+    height: 100%;
+    border-radius: 1.5rem;
+    border: 1px solid white;
+    overflow: hidden;
+}
+
+main .map-frame {
+    background-color: black;
+    text-align: center;
+    justify-content: center;
+    border: 3px solid white;
+    padding: 2rem;
+    max-width: 40rem;
+    min-height: 20rem;
+    margin: 3rem auto;
+    border-radius: 1rem;
+    transition: transform 0.5s ease;
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+}
+
+main .map-frame:hover {
+    transform: translateY(-2px);
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: 15vh;
+    }
+
+    .header-title {
+        font-size: 2.5rem;
+        -webkit-text-stroke: 1px white;
+        width: 95%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .go-home {
+        display: none;
+    }
+
+    main {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .left-container, .map-artist {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .image-button-container {
+        flex-direction: column;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+
+    .image-button-container img {
+        width: 80%;
+        height: auto;
+        margin: 0 auto 1rem;
+        display: block;
+    }
+
+    .player {
+        width: 100%;
+        height: 80px;
+        margin: 0 auto 1rem;
+    }
+
+    .player iframe {
+        height: 120px !important;
+    }
+
+    .artist-life {
+        height: auto;
+        padding: 2rem 1rem 1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .creation-date, .first-album {
+        position: static;
+        font-size: 1.2em;
+        margin-bottom: 0.5rem;
+    }
+
+    .group-member-title {
+        display: block;
+        margin: 1rem 0 0.5rem;
+        font-size: 1.2em;
+    }
+
+    .group-member {
+        margin-top: 0.5rem;
+        line-height: 1.4;
+        display: block;
+        font-size: 1em;
+    }
+
+    .map-artist {
+        height: 50vh;
+    }
+
+    .element-order {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #map {
+        height: 100%;
+    }
+}

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="/static/images/favicon.png">
+    <title>Groupie Tracker</title>
+</head>
+<body>
+
+<header>
+    <h1 class="header-title">GROUPIE TRACKER</h1>
+    <video autoplay loop muted src="https://i.imgur.com/xMHvdJ5.mp4"></video>
+</header>
+
+<main>
+    <div class="artists-section">
+        <form action="/search" method="GET" class="container">
+            <input name="search" placeholder="Search..." class="js-search" type="text">
+            <button type="submit" class="search-button">
+                <i class="bx bx-search-alt-2"></i>
+            </button>
+            <button type="button" class="filter-button">
+                <i class="bx bx-filter"></i>
+            </button>
+        </form>
+
+
+        <div class="filter-section">
+            <form method="get" action="/filters">
+                <div class="filter-option">
+                    <label for="creation-date-range">Creation Date:</label>
+                    <div class="date-range">
+                        <input type="range" id="creation-date-start" name="creation-date-start" min="1958" max="2015"
+                               value="1958" class="range-bottom">
+                        <input type="range" id="creation-date-end" name="creation-date-end" min="1958" max="2015"
+                               value="2015" class="range-top">
+                        <div class="date-labels">
+                            <span id="creation-date-start-label">1958</span> - <span
+                                    id="creation-date-end-label">2015</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-option">
+                    <label for="first-album-date-range">First Album Date:</label>
+                    <div class="date-range">
+                        <input type="range" id="first-album-date-start" name="first-album-date-start" min="1963"
+                               max="2018" value="1963" class="range-bottom">
+                        <input type="range" id="first-album-date-end" name="first-album-date-end" min="1963" max="2018"
+                               value="2018" class="range-top">
+                        <div class="date-labels">
+                            <span id="first-album-date-start-label">1963</span> - <span id="first-album-date-end-label">2018</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-option">
+                    <label for="number-of-members">Number of Members:</label>
+                    <div class="members">
+                        <input type="checkbox" id="members-1" name="members" value="1"> 1
+                        <input type="checkbox" id="members-2" name="members" value="2"> 2
+                        <input type="checkbox" id="members-3" name="members" value="3"> 3
+                        <input type="checkbox" id="members-4" name="members" value="4"> 4
+                        <input type="checkbox" id="members-5" name="members" value="5"> 5+
+                    </div>
+                </div>
+                <div class="filter-option">
+                    <label for="locations">Locations of Concerts:</label>
+                    <input type="text" id="locations" name="locations">
+                </div>
+                <button type="submit" class="apply-filters-button">Apply Filters</button>
+            </form>
+            <form action="/reset-filters" method="post">
+                <button type="submit" class="reset-filters-button">Reset Filters</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="artists">
+        {{if eq (len .) 0}}
+            <div class="no-result-popup">
+                <p>No result found</p>
+            </div>
+        {{else}}
+        {{end}}
+        {{range $index, $artist := .}}
+            <form action="/artist" method="get" class="artist">
+                <input type="hidden" name="id" value="{{$artist.Id}}">
+                <button type="submit" class="artist-button">
+                    <img src="{{$artist.Image}}" alt="{{$artist.Name}}">
+                    <p>{{$artist.Name}}</p>
+                </button>
+            </form>
+        {{end}}
+    </div>
+</main>
+
+<footer>
+    <div>
+        &copy; 2024/2025 - Groupie Tracker
+    </div>
+    <div>
+        <div>
+            <a href="https://www.linkedin.com/in/joshua-budgen-a2a19524b" target="_blank">
+                <i class='bx bxl-linkedin-square'></i> BUDGEN Joshua
+            </a>
+        </div>
+        <div>
+            <a href="https://www.linkedin.com/in/lucas-lasbennes-215193282" target="_blank">
+                <i class='bx bxl-linkedin-square'></i> LASBENNES Lucas
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script src="/static/js/script.js"></script>
+</body>
+</html>

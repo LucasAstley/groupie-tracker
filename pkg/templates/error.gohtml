@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/error.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="/static/images/favicon.png">
+    <title>Groupie Tracker - Error {{.Code}}</title>
+</head>
+<body>
+
+<div class="error-container">
+    <video autoplay loop muted src="https://i.imgur.com/xMHvdJ5.mp4"></video>
+    <div class="error-content">
+        <h1 class="error-code">{{.Code}}</h1>
+        <p class="error-message">{{.Message}}</p>
+        <button class="go-home" onclick="window.location.href = '/'">
+            <i class='bx bx-home'></i> Return to Home
+        </button>
+    </div>
+</div>
+
+</body>
+</html>
