@@ -36,6 +36,9 @@ The final project repository can be founded [here](https://ytrack.learn.ynov.com
 
 ## 🚀 How to run the project
 
+> [!NOTE]
+> A working web hosted version of the project is available at [groupie-tracker.lucas-astley.live](https://groupie-tracker.lucas-astley.live/) !
+
 To run the project, you will need to have Go installed on your computer. If you don't have it, you can download it [here](https://golang.org/dl/).
 
 1. Clone the repository:
